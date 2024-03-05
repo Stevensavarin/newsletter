@@ -1,25 +1,25 @@
-"use client"
-
+"use client";
 import { NextUIProvider } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
+import DashboardSidebar from "@/shared/widgets/dashboard/sidebar/dashboard.sidebar";
 
 
 interface ProviderProps {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export default function Providers({ children }: ProviderProps) {
-    const pathname = usePathname();
+  const pathname = usePathname();
 
-    const { isLoaded, user } = useUser();
+  const { isLoaded, user } = useUser();
 
-    if (!isLoaded) {
-        return null;
-    }
+  if (!isLoaded) {
+    return null;
+  }
 
-    return (
-        <NextUIProvider>
+  return (
+    <NextUIProvider>
       {pathname !== "/dashboard/new-email" &&
       pathname !== "/" &&
       pathname !== "/sign-up" &&
@@ -28,14 +28,13 @@ export default function Providers({ children }: ProviderProps) {
       pathname !== "/sign-in" ? (
         <div className="w-full flex">
           <div className="w-[290px] h-screen overflow-y-scroll">
-        </div>
+            <DashboardSidebar />
+          </div>
           {children}
         </div>
       ) : (
         <>{children}</>
       )}
-      
     </NextUIProvider>
-    );
+  );
 }
-
