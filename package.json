@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^4.29.9",
+    "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.12",
     "@mui/x-data-grid": "^6.19.6",
     "@nextui-org/react": "^2.2.9",
@@ -36,6 +37,7 @@
   "devDependencies": {
     "@types/js-cookie": "^3.0.6",
     "@types/jsonwebtoken": "^9.0.6",
+    "@types/next": "^9.0.0",
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.14",
     "@types/react": "^18",
