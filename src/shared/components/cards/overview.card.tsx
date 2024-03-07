@@ -14,10 +14,10 @@ const DashboardOverViewCard = () => {
 
   let comparePercentage = 0;
 
-  if (previousLastMonthSubscribers.count > 0) {
+  if (previousLastMonthSubscribers && previousLastMonthSubscribers.count > 0) {
     comparePercentage =
-      ((lastMonthSubscribers - previousLastMonthSubscribers) /
-        previousLastMonthSubscribers) *
+      ((lastMonthSubscribers - previousLastMonthSubscribers.count) /
+        previousLastMonthSubscribers.count) *
       100;
   } else {
     comparePercentage = 100;
